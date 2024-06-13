@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs", {page_name: "Sign up"}) %>
+    <link rel="stylesheet" href="/styles/registration-style.css" />
+    <script src="/scripts/registration-script.js" defer></script>
+  </head>
+  <body>
+    <section id="wrapper">
+      <div class="right">
+        <a href="/"
+          ><img src="/assets/BlockyLand.png" alt="logo" id="logo"
+        /></a>
+        <!-- <span class="exit-icon icon"><ion-icon name="close"></ion-icon></span> -->
+        <form action="/login" id="loginForm" method="post">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+            <input type="email" id="email" name="email" required />
+            <label for="email">Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"
+              ><ion-icon name="lock-closed-outline"></ion-icon
+            ></span>
+            <input type="password" id="password" name="password" required />
+            <label for="password">Password</label>
+          </div>
+          <button type="submit" class="btn" id="submit-btn">Log in</button>
+          <p>
+            Don't have an account? <a href="/signup" class="sign-up">Sign up</a>
+          </p>
+        </form>
+      </div>
+      <div class="left">
+        <img src="/assets/blocky.png" />
+      </div>
+    </section>
+
+    <script src="js/registration-script.js"></script>
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

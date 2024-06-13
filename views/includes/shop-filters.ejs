@@ -1,0 +1,206 @@
+<section id="filters">
+  <!-- Replace with ejs syntax -->
+  <h4 class="total">Showing 56 products</h4>
+  <div class="stock-only">
+    <label for="in-stock-only"
+      ><input type="checkbox" id="in-stock-only" />Show in stock only</label
+    >
+  </div>
+
+  <h4 class="filter-name">Product type</h4>
+  <ul id="product-type-initial">
+    <li class="option">
+      <input type="checkbox" id="sets" /> <label for="sets">Sets</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="home-decor" />
+      <label for="home-decor">Home Decor</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="adults" />
+      <label for="adults">Adults</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="easter-gifts" />
+      <label for="easter-gifts">Easter Gifts</label>
+    </li>
+  </ul>
+  <ul id="product-type-hidden">
+    <li class="option">
+      <input type="checkbox" id="all-occasions" />
+      <label for="all-occasions">All Occasions</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="lunar-new-year" />
+      <label for="lunar-new-year">Lunar New Year</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="minifigures" />
+      <label for="minifigures">Minifigures</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="ornaments" />
+      <label for="ornaments">Ornaments</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="backpacks-lunch-boxes" />
+      <label for="backpacks-lunch-boxes">Backpacks & Lunch Boxes</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="mother-day-gift-ideas" />
+      <label for="mother-day-gift-ideas">Mother Day Gift Ideas</label>
+    </li>
+  </ul>
+  <span class="icon dropdown" id="show-type-btn"
+    ><ion-icon name="caret-down-outline"></ion-icon
+  ></span>
+
+  <h4 class="filter-name">Price</h4>
+  <ul id="price">
+    <li class="option">
+      <input type="checkbox" id="price-0-25" />
+      <label for="price-0-25">$0 - $25</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="price-25-50" />
+      <label for="price-25-50">$25 - $50</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="price-50-75" />
+      <label for="price-50-75">$50 - $75</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="price-75-100" />
+      <label for="price-75-100">$75 - $100</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="price-100-plus" />
+      <label for="price-100-plus">$100+</label>
+    </li>
+  </ul>
+
+  <h4 class="filter-name">Theme</h4>
+  <ul id="theme">
+    <li class="option">
+      <input type="checkbox" id="batman" />
+      <label for="batman">Batman</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="brickheadz" />
+      <label for="brickheadz">BrickHeaadz</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="creator-expert" />
+      <label for="creator-expert">Creator Expert</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="dc" /> <label for="dc">DC</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="disney-mickey-friends" />
+      <label for="disney-mickey-friends">Disney Mickey and Friends</label>
+    </li>
+  </ul>
+  <span class="icon dropdown"
+    ><ion-icon name="caret-down-outline"></ion-icon
+  ></span>
+
+  <h4 class="filter-name">Interest</h4>
+  <ul id="interest">
+    <li class="option">
+      <input type="checkbox" id="aeroplanes" />
+      <label for="aeroplanes">Aeroplanes</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="animals" />
+      <label for="animals">Animals</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="art-design-music" />
+      <label for="art-design-music">Art, Design & Music</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="birthday" />
+      <label for="birthday">Birthday</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="boats" />
+      <label for="boats">Boats</label>
+    </li>
+  </ul>
+  <span class="icon dropdown"
+    ><ion-icon name="caret-down-outline"></ion-icon
+  ></span>
+
+  <h4 class="filter-name">Age</h4>
+  <ul id="age">
+    <li class="option">
+      <input type="checkbox" id="age-6-plus" />
+      <label for="age-6-plus">6+</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="age-9-plus" />
+      <label for="age-9-plus">9+</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="age-13-plus" />
+      <label for="age-13-plus">13+</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="age-18-plus" />
+      <label for="age-18-plus">18+</label>
+    </li>
+  </ul>
+
+  <h4 class="filter-name">Availability</h4>
+  <ul id="availability">
+    <li class="option">
+      <input type="checkbox" id="available-now" />
+      <label for="available-now">Available now</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="back-order" />
+      <label for="back-order">Back Order</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="out-of-stock" />
+      <label for="out-of-stock">Out of Stock</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="pre-order" />
+      <label for="pre-order">Pre-order</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="coming-soon" />
+      <label for="coming-soon">Coming Soon</label>
+    </li>
+  </ul>
+
+  <h4 class="filter-name">Piece count</h4>
+  <ul id="piece-count">
+    <li class="option">
+      <input type="checkbox" id="piece-1-99" />
+      <label for="piece-1-99">1-99</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="piece-100-249" />
+      <label for="piece-100-249">100-249</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="piece-250-499" />
+      <label for="piece-250-499">250-499</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="piece-500-999" />
+      <label for="piece-500-999">500-999</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="piece-1000-1999" />
+      <label for="piece-1000-1999">1000-1999</label>
+    </li>
+    <li class="option">
+      <input type="checkbox" id="piece-2000-plus" />
+      <label for="piece-2000-plus">2000+</label>
+    </li>
+  </ul>
+</section>

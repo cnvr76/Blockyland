@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs", {page_name: "Add item"}) %>
+    <link rel="stylesheet" href="/styles/forms.css" />
+    <link rel="stylesheet" href="/styles/tables.css" />
+    <script src="/scripts/admin-icons.js" defer></script>
+  </head>
+  <body>
+    <div class="everything">
+      <%- include("includes/header.ejs", {filters_menu: false}) %>
+    </div>
+
+    <section class="table-section">
+      <h1 style="margin-top: 0">Table of users</h1>
+      <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Rights</th>
+          <th>Funcs</th>
+        </tr>
+        <% for (const user of allUsers) {%>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.rights %></td>
+          <td class="icons">
+            <a href="/admin-panel/<%= user.user_id %>/make-admin"
+              ><ion-icon name="build-outline" class="make-admin-btn"></ion-icon
+            ></a>
+            <a href="/admin-panel/<%= user.user_id %>/delete">
+              <ion-icon name="trash-outline" class="delete-user-btn"></ion-icon>
+            </a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </section>
+  </body>
+</html>

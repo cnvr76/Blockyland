@@ -1,0 +1,93 @@
+/* #review-section {
+  padding: 0 20%;
+}
+
+.review {
+  background: rgb(0, 0, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.review ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.review ul li {
+  background: rgb(105, 91, 169, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.review .p-review {
+  padding: 0 15px;
+}
+
+.review img {
+  width: 1.5rem;
+} */
+
+/* Стили для общей секции отзывов */
+#review-section {
+  display: flex;
+  flex-wrap: wrap; /* Перенос элементов при нехватке места */
+  justify-content: center; /* Центрирование карточек */
+  padding: 30px; /* Отступы внутри секции */
+  gap: 20px; /* Промежуток между карточками */
+}
+
+/* Стили для каждой карточки отзыва */
+.review {
+  background-color: white; /* Фон каждой карточки */
+  border: 1px solid #ccc; /* Граница карточки */
+  border-radius: 8px; /* Скругление углов */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточки */
+  padding: 15px; /* Внутренние отступы карточки */
+  width: 100%; /* Ширина карточки */
+  max-width: 350px; /* Максимальная ширина карточки */
+  box-sizing: border-box; /* Размеры включают padding и border */
+}
+
+/* Стили для списка внутри карточки */
+.review ul {
+  list-style-type: none; /* Убрать стандартные маркеры списка */
+  padding: 0; /* Убрать отступы у списка */
+  margin: 0 0 10px 0; /* Отступы снизу списка */
+}
+
+.review li {
+  margin-bottom: 5px; /* Отступы между элементами списка */
+}
+
+.li-author {
+  font-weight: bold; /* Жирный текст для автора */
+  color: #333; /* Темно-серый цвет текста */
+}
+
+.p-review {
+  font-size: 0.95em; /* Немного меньший размер шрифта для текста отзыва */
+  color: #666; /* Серый цвет текста */
+  line-height: 1.5; /* Межстрочный интервал */
+}
+
+.review img {
+  width: 1.5rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  #review-section {
+    flex-direction: column; /* Карточки в один столбец */
+    align-items: center; /* Центрирование карточек */
+  }
+
+  .review {
+    max-width: 90%; /* Ширина карточек на мобильных */
+  }
+}

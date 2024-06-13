@@ -1,0 +1,15 @@
+<!-- Item from the shop.ejs -->
+<div class="admin-div">
+  <button class="choose" data-item_id="<%= item.id %>">
+    <div class="image-container">
+      <img src="<%= item.image %>" alt="<%= item.item_name %>" class="image" />
+      <div class="caption"><%= item.item_name %></div>
+      <div class="price"><%= item.price %> $</div>
+    </div>
+  </button>
+  <% if (locals.user) { %> <% if (locals.user.isAdmin) { %>
+  <form action="/shop/<%= item.id %>/delete" method="post">
+    <button type="submit" class="delete-btn">Delete</button>
+  </form>
+  <% } %> <% } %>
+</div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head", {page_name: "Cart"}) %>
+    <link rel="stylesheet" href="/styles/cart.css" />
+    <link rel="stylesheet" href="/styles/tables.css" />
+    <script src="/scripts/cart.js" defer></script>
+  </head>
+  <body>
+    <div style="display: grid" class="keverything">
+      <%- include("includes/header.ejs", {filters_menu: false}) %>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <h1>MY BAG</h1>
+    </div>
+    <!-- <div style="margin-left: 10%">
+      <button class="sort">
+        <img style="width: 100%" src="/assets/icons/sort.png" />
+      </button>
+    </div> -->
+    <div class="selection">
+      <div class="cart__right">
+        <% if (locals.user) {%> <% for (const item of cart) {%> <% if
+        (locals.user.id === item.user_id) {%>
+        <%-include("includes/cart_item.ejs", {item}) %> <% } %> <% } %> <% }
+        else {%>
+        <div style="text-align: center">
+          <h2
+            style="text-align: center; color: var(--grad-purple); margin: 4rem"
+          >
+            <a href="/login" style="color: black">Log in</a> to have access to
+            your cart
+          </h2>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="cart__left">
+        <h1>Order Summary</h1>
+
+        <div class="input-button-container">
+          <input type="text" class="input-field" placeholder="Example: 96321" />
+          <button class="apply-button">Apply</button>
+        </div>
+
+        <div class="input-button-container">
+          <label style="text-align: center" for="zip-code"
+            >Enter a ZIP code to estimate tax and delivery</label
+          >
+          <input
+            type="text"
+            class="input-field"
+            name="zip-code"
+            placeholder="Example: 96321"
+          />
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="order-total"
+          style="font-family: 'Times New Roman'; font-weight: 500"
+        >
+          <p style="font-size: larger" id="total-p">
+            Total item amount: 0 items
+          </p>
+
+          <p
+            style="font-size: larger; color: var(--grad-purple)"
+            id="total-sum"
+          >
+            <% if (locals.user) {%> Total: <u><%= sum %> $</u> <% }else{
+            %>Total: <u>0 $</u> <% } %>
+          </p>
+        </div>
+        <button class="checkout-btn" style="width: 100%">
+          Checkout Securely
+        </button>
+        <div class="express-checkout">
+          <p>Express Checkout</p>
+          <p>
+            All order details will be taken directly from your payment provider,
+            please ensure you select the correct addresses before submitting
+            your order. From the payment provider, you will be directed to the
+            order confirmation page. If you have a discount code, please choose
+            ‘Checkout Securely’.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

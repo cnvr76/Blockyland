@@ -1,0 +1,12 @@
+<div class="registration">
+  <% if (locals.isAuth) {%>
+  <form action="/logout" method="post">
+    <button type="submit" id="log-out-btn" style="padding: 10px 15px">
+      Log out
+    </button>
+  </form>
+  <% } else { %>
+  <button id="log-in-btn">Log in</button>
+  <button id="sign-up-btn">Sign up</button>
+  <% } %>
+</div>

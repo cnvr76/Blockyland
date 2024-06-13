@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs", {page_name: "Shop"}) %>
+    <link rel="stylesheet" href="styles/shop-style.css" />
+    <link rel="stylesheet" href="styles/item.css" />
+    <script src="scripts/shop-script.js" defer></script>
+    <!-- <link rel="stylesheet" href="Styles/cart-styles.css"> -->
+  </head>
+  <body>
+    <div class="everything">
+      <%- include("includes/header.ejs", {filters_menu: true}) %>
+    </div>
+
+    <section id="shop-container">
+      <!-- Filters -->
+      <%- include("includes/shop-filters.ejs") %>
+      <section id="product-placement">
+        <div class="item-grid">
+          <!-- TODO -->
+          <div class="library filter-shown">
+            <% for (const item of items) {%>
+            <%-include("includes/item.ejs",{item}) %> <% } %>
+          </div>
+        </div>
+
+        <%- include("includes/page-nav.ejs") %>
+      </section>
+    </section>
+
+    <%- include("includes/footer.ejs") %>
+  </body>
+</html>

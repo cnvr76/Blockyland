@@ -1,0 +1,28 @@
+<div class="header">
+  <% if (filters_menu) { %>
+  <span id="menu-icon"><ion-icon name="menu-outline"></ion-icon></span>
+  <% } %>
+  <a href="/"><img src="/assets/BlockyLand.png" alt="Logo" class="logo" /></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="/shop">SHOP</a></li>
+      <li><a href="/about-us">ABOUT US</a></li>
+      <% if (locals.user) { %> <% if (locals.user.isAdmin) { %>
+      <li><a href="/add-item">ADD ITEM</a></li>
+      <li><a href="/admin-panel">ADMINS</a></li>
+      <% } %> <% } %> <% if (locals.user) {%>
+      <li id="cart-icon">
+        <a href="/cart/<%= locals.user.id %>" style="text-align: center"
+          ><img style="width: 50%" src="/assets/shopping-cart.png"
+        /></a>
+      </li>
+      <% } else {%>
+      <li id="cart-icon">
+        <a href="/cart" style="text-align: center"
+          ><img style="width: 50%" src="/assets/shopping-cart.png"
+        /></a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>

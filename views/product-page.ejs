@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs", {page_name: "Item Details"}) %>
+    <link rel="stylesheet" href="/styles/product-page-style.css" />
+    <link rel="stylesheet" href="/styles/forms.css" />
+    <link rel="stylesheet" href="/styles/review-list.css" />
+    <script src="/scripts/blank.js" defer></script>
+    <!-- <script src="/scripts/reviews.js" defer></script> -->
+  </head>
+  <body>
+    <div class="everything">
+      <%- include("includes/header.ejs", {filters_menu: false}) %>
+    </div>
+
+    <div class="path" style="display: flex; gap: 10px; margin-left: 30px">
+      <h4>
+        <a href="/">Home > </a>
+      </h4>
+      <h4>
+        <a href="/shop">Shop > </a>
+      </h4>
+      <h4 class="pathToProduct"><%= item.item_name %></h4>
+    </div>
+
+    <div id="temp" class="temp">
+      <div class="container">
+        <div class="gallery-container">
+          <div class="thumbnails">
+            <% for (const image of other_images) { %>
+              <button class="ChImage" data-url="<%= image.other %>">
+                <img src="<%= image.other %>" />
+            <% } %>
+          </div>
+          <div class="MPhoto">
+            <img
+              id="main-photo"
+              class="main-image"
+              src="<%= item.image %>"
+              alt="Main Product Image"
+            />
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-rating">
+            <% if (averageRating) {%> <%- include("includes/star-rating.ejs",
+            {rating: averageRating}) %>
+            <span class="rating-count">Reviews: <%= reviews.length %></span>
+            <% } else { %> <%- include("includes/star-rating.ejs", {rating: 0})
+            %>
+            <span class="rating-count">Reviews: 0</span>
+            <% } %>
+          </div>
+          <div class="name">
+            <h1 class="product-title"><%= item.item_name %></h1>
+            <h2 class="product-subtitle"><%= item.name %></h2>
+          </div>
+          <div class="product-price"><%= item.price %> $</div>
+          <div class="product-delivery">Will ship in 60 days</div>
+          <div class="quantity-selector">
+            <button class="decrease-quantity" onclick="changeQuantity(-1)">
+              -
+            </button>
+            <input
+              type="number"
+              class="product-quantity"
+              value="1"
+              min="1"
+              max="99"
+              readonly
+            />
+            <button class="increase-quantity" onclick="changeQuantity(1)">
+              +
+            </button>
+          </div>
+          <% if (!locals.isAuth) {%>
+          <button class="buy-button" style="background: gray; color: black; " disabled>
+            <img src="/assets/icons/cart.png" />Log in to buy
+          </button>
+          <% } else { %>
+            <!-- <a href="" class="buy-button" style="text-decoration: none; color: black; width: 70%;"> -->
+              <button class="buy-button" data-item_id="<%= item.id %>">
+                <img src="/assets/icons/cart.png"/>Buy
+              </button>
+          <% } %>
+          <div class="product-actions">
+            <button id="notify-button">
+              <img src="/assets/icons/mail.png" />Notify When in Stock
+            </button>
+            <button id="check-stock">
+              <img src="/assets/icons/geo.png" />Check Store Stock
+            </button>
+            <button id="delivery-returns">
+              <img src="/assets/icons/delivery.png" />Deliveries and Returns
+            </button>
+            <button id="building-instructions">
+              <img src="/assets/icons/instructions.png" />Building Instructions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if (locals.isAuth) {%>
+      <section class="form-container">
+        <h1 style="margin-top: 0">Leave a review 🙃</h1>
+        <!-- data-item_id="<%= item.id %>" -->
+        <form method="post" action="/shop/<%= item.id %>/details/reviews">
+          <div class="form-control">
+            <label for="rating">Rating</label>
+            <select name="rating" id="rating">
+              <% for (let i = 0; i < 5; i++) {%>
+              <option value="<%= i+1 %>"><%= i+1 %></option>
+              <% } %>
+            </select>
+          </div>
+          <div class="form-control">
+            <label for="review">Review</label>
+            <textarea
+              name="review"
+              id="review"
+              cols="40"
+              rows="5"
+              maxlength="35"
+              placeholder="Write your impression... (35 chars max)"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <button class="btn" type="submit">Add review!</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="review-section">
+        <% if (reviews) {%> <% for (const review of reviews) { %>
+        <div class="review">
+          <ul>
+            <li class="li-author"><%= review.name %></li>
+            <li class="li-rating">
+              <%- include("includes/star-rating.ejs", {rating: review.rating}) %>
+            </li>
+          </ul>
+          <p class="p-review"><%= review.review %></p>
+          <form
+            action="/shop/<%= item.id %>/details/reviews/<%= review.rating_id %>/delete"
+            method="post"
+          >
+          <% if (review.user_id === locals.user.id || locals.user.isAdmin) {%>
+            <button type="submit" class="delete-btn">Delete</button>
+            <% } %>
+          </form>
+        </div>
+        <% } %> <% } %>
+      </section>
+      <% } else { %>
+        <h2 style="text-align: center; color: var(--grad-purple); margin: 4rem;">
+          <a href="/login" style="color: black;">Log in</a> to leave a review and read other people comments</h2>  
+      <% } %>
+
+    <%- include("includes/footer.ejs") %>
+  </body>
+</html>

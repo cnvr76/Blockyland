@@ -1,0 +1,38 @@
+<div class="lib">
+  <div class="item-image-container">
+    <img src="<%= item.image %>" alt="item-image" class="product-image" />
+  </div>
+  <div class="center">
+    <div class="up">
+      <h2><%= item.name %></h2>
+      <button class="del">
+        <a href="/cart/<%= item.id %>/delete">
+          <ion-icon
+            name="trash-outline"
+            class="delete-cart-item-btn"
+          ></ion-icon>
+        </a>
+      </button>
+    </div>
+    <div class="down">
+      <h2 class="price-tag" data-price="<%= item.price %>">
+        Price: <%= item.price %> $
+      </h2>
+      <div class="quantity-selector">
+        <button class="decrease-quantity">-</button>
+        <input
+          type="number"
+          class="product-quantity"
+          value="<%= item.quantity %>"
+          min="1"
+          max="99"
+          readonly
+        />
+        <button class="increase-quantity">+</button>
+        <button class="save-quantity" data-item_id="<%= item.id %>">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

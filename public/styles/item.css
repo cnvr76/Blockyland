@@ -1,0 +1,110 @@
+/* Card styles */
+.left .library {
+  margin: 2% 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+  align-items: stretch;
+  justify-items: center;
+  margin: 10px 10px;
+}
+
+.left .library button {
+  width: fit-content;
+  border: none;
+  background: white;
+}
+
+.image-container {
+  position: relative;
+  padding: 0 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 3.5px solid black;
+  border-top: 3.5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 200px;
+  max-width: 260px;
+}
+
+/* ADMIN */
+.admin-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choose {
+  height: 100%;
+}
+
+.admin-div .delete-btn {
+  cursor: pointer;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.admin-div .delete-btn:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+/* Lines at the left and right */
+.image-container::before,
+.image-container::after {
+  content: "";
+  position: absolute;
+  margin: 0 -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 97%;
+  width: 3px;
+  background: black;
+}
+
+.image-container::before {
+  left: 0;
+}
+
+.image-container::after {
+  right: 0;
+}
+
+.image-container .image {
+  position: relative;
+  /* width: 100%; */
+  padding: 10px 0;
+  max-width: 160px;
+  max-height: 200px;
+  /* min-width: 140px; */
+  height: auto;
+  margin: auto;
+  display: block;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.image:hover,
+.image:active {
+  transform: scale(1.3);
+}
+
+.caption {
+  font-family: inherit;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+  border-top: 3.5px solid black;
+  position: relative;
+  bottom: 0;
+  padding: 15px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs", {page_name: "About"}) %>
+    <link rel="stylesheet" href="styles/about-us-style.css" />
+  </head>
+  <body>
+    <div class="everything">
+      <%- include("includes/header.ejs", {filters_menu: false}) %>
+    </div>
+
+    <section id="main-about">
+      <img class="lego-wall up1" src="assets/lego-wall.png" alt="lego" />
+
+      <p class="story">
+        The name 'LEGO' is an abbreviation of the two Danish words “leg godt”,
+        meaning “play well”. It's our name and it's our ideal. The LEGO Group
+        was founded in 1932 by Ole Kirk Kristiansen. The company has passed from
+        father to son and is now owned by Kjeld Kirk Kristiansen, a grandchild
+        of the founder.
+      </p>
+
+      <img class="lego-wall down1" src="assets/lego-wall.png" alt="lego" />
+      <img class="lego-wall up2" src="assets/lego-wall.png" alt="lego" />
+    </section>
+
+    <section id="map-section">
+      <img src="assets/Map.png" alt="map" />
+
+      <h4>27,000+ people in 40+ countries</h4>
+      <h1>Supporting a more creative and resilient society</h1>
+    </section>
+
+    <section id="logos">
+      <img src="assets/Education-Lego.png" alt="" />
+      <img src="assets/The-LEGO-Foundation.png" alt="" />
+      <img src="assets/Brick-Home-Lego.png" alt="" />
+    </section>
+
+    <%- include("includes/footer.ejs") %>
+  </body>
+</html>

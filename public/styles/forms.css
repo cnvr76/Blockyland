@@ -1,0 +1,76 @@
+.everything .header {
+  grid-column: span 4;
+}
+#footer {
+  margin-top: 20px;
+}
+
+.form-container,
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--grad-purple);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 0 20%;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+}
+
+option {
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background: white;
+  padding: 10px;
+  width: 100%;
+}
+
+select,
+.form-control input,
+label {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+}
+
+select,
+input {
+  border-radius: 5px;
+  border: 2px solid var(--grad-purple);
+}
+
+button {
+  border-radius: 5px;
+  background: white;
+  stroke: none;
+  border: none;
+  padding: 10px 30px;
+  font-family: inherit;
+}
+button:hover,
+#images:hover {
+  cursor: pointer;
+}

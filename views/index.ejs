@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("includes/head.ejs", {page_name: "Home Page"}) %>
+    <!-- <link rel="stylesheet" href="styles/popUpWindow.css" /> -->
+    <!-- <script src="/js/popUpWindow.js"></script> -->
+    <link rel="stylesheet" href="/styles/item.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+    <script src="/scripts/falling-blocks.js" defer></script>
+    <script src="/scripts/itemInfo.js" defer></script>
+</head>
+<body>
+
+    <!-- include popup menu later -->
+
+    <div class="everything">
+
+        <%- include("includes/header.ejs", {filters_menu: false}) %>
+
+        <!-- Animation -->
+        <div class="animation-container right">
+
+            <%- include("includes/registration.ejs") %>
+            
+            <div class="animation-item-place">
+                <div class="temp">
+                    <img class="falling-object obj0" src="assets/fallingObj/Single_0.png"></img>
+                    <img class="falling-object obj1" src="assets/fallingObj/Single_1.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj1" src="assets/fallingObj/Single_1.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj2" src="assets/fallingObj/Single_2.png"></img>
+                    <img class="falling-object obj3" src="assets/fallingObj/Single_3.png"></img>
+                    <img class="falling-object obj3" src="assets/fallingObj/Single_3.png"></img>
+                    <img class="falling-object obj3" src="assets/fallingObj/Single_3.png"></img>
+                    <img class="falling-object obj3" src="assets/fallingObj/Single_3.png"></img>
+                    <img class="falling-object obj4" src="assets/fallingObj/Tetris shit.png"></img>
+                    <img class="falling-object obj4" src="assets/fallingObj/Tetris shit.png"></img>
+                    <img class="falling-object obj3" src="assets/fallingObj/Single_3.png"></img>
+                    <img class="falling-object obj5" src="assets/fallingObj/Line.png"></img>
+                    <img class="falling-object obj5" src="assets/fallingObj/Line.png"></img>
+                    <img class="falling-object obj5" src="assets/fallingObj/Line.png"></img>
+                    <img class="falling-object obj6" src="assets/fallingObj/Square.png"></img>
+                    <img class="falling-object obj6" src="assets/fallingObj/Square.png"></img>
+                    <img class="falling-object obj6" src="assets/fallingObj/Square.png"></img>
+                    <img class="falling-object obj4" src="assets/fallingObj/Tetris shit.png"></img>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content left">
+            <section id="hero">
+                <h4 class="moto">Build, Play, Imagine: 
+                    Your Gateway to 
+                    Endless Brick Wonders!</h4>
+                <p class="introduction">Welcome to BlocksyLand, where creativity has no 
+                    limits! Dive into a world of colorful bricks and 
+                    boundless possibilities. Whether you're a dreamer, 
+                    a builder, or an explorer, join our community to create, 
+                    share, and bring your unique visions to life. 
+                    Build your dreams, one brick at a time, 
+                    with BlocksyLand!</p>
+                <div class="sign">
+                    <img src="assets/sign-line.png" alt="sign" class="sign-img">
+                </div>
+            </section>
+            <section id="community">
+                <div class="socials">
+                    <h4>Join community</h4>
+                    <a href="#"><img src="assets/Telegram.png" alt="" id="Telegram"></a>
+                    <a href="#"><img src="assets/Instagram.png" alt="" id="Instagram"></a>
+                    <a href="#"><img src="assets/Facebook.png" alt="" id="Facebook"></a>
+                    <a href="#"><img src="assets/Twitter.png" alt="" id="X"></a>
+                </div>
+                <div class="enjoy">
+                    <h4>ENJOY</h4>
+                    <img src="assets/batman.png" alt="batman" id="bat">
+                    <img src="assets/deadpool.png" alt="deadpool" id="dead">
+                    <img src="assets/spiderman.png" alt="spiderman" id="spider">
+                </div>
+            </section>
+    
+            <div class="top-collection-text">
+                <img src="assets/Top.png" alt="rating-stairs-icon">
+                <h4>Top Collection</h4>
+            </div>
+
+            <div class="wrapper-library">
+                <div class="library">
+                    <% for (const item of items) {%>
+                        <%-include("includes/popular-item.ejs",{item}) %> <% } %>
+                </div>
+            </div>
+    
+            <%- include("includes/footer.ejs") %>
+        </div>
+        
+    </div>
+</body>
+</html>

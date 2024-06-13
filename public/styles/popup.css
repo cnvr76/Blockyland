@@ -1,0 +1,170 @@
+html {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    user-select: none;
+}
+  
+.popup-content {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 10;
+}
+  
+.close-btn {
+    float: right;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.cont .rightPopup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont .rightPopup img, 
+.cont .rightPopup h1, 
+.cont .rightPopup h3 {
+  margin: 0; 
+  width: auto;
+}
+
+.cont .rightPopup {
+  gap: 20px; 
+}
+
+.cont {
+  position: absolute; 
+  border-radius: 10px;
+  padding: 40px 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 50%;
+  background: white;
+}
+
+.cont .rightPopup {
+  width: auto;
+  height: 100%;
+}
+
+/* BUTTON */
+.buy-button {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  padding: 10px 50px;
+  font-family: inherit;
+  font-size: medium;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: black;
+  box-shadow: 0 0 5px var(--grad-purple);
+  width: 70%;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, transform 0.1s ease;
+  justify-content: center;
+  gap: 10px
+}
+
+.buy-button:hover{
+  color: white;
+  background: var(--grad-purple);
+  box-shadow: 0 5px 0 rgb(40, 12, 59);
+}
+
+.buy-button:active{
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+.reg {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+/* Registation buttons */
+.reg {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 35px;
+  width: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.reg #sign-up-btn-popup, #log-in-btn-popup {
+  font-family: inherit;
+  padding: 0 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+  padding: 5px 10px;
+  color: black;
+}
+
+.reg #sign-up-btn-popup,
+.reg #log-in-btn-popup  {
+  background: none;
+  border: none;
+  border-radius: 7px;
+}
+
+/* Hover btn */
+.reg #sign-up-btn-popup:hover {
+  background: black;
+  color: white;
+}
+
+.reg #log-in-btn-popup:hover {
+  background: black;
+  color: white;
+}
+
+@media (max-width: 680px) {
+  .cont {
+    width: 55%;
+  }
+}
+
+@media (max-width: 450px) {
+  .cont {
+    width: 60%;
+  }
+}
+
+@media (max-width: 370px) { 
+  .cont .rightPopup h1{
+    font-size: 1.6rem;
+  }
+  .cont .rightPopup h3 {
+    font-size: 1rem;
+  }
+  .cont .rightPopup img {
+    width: 88%;
+  }
+}
