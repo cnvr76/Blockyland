@@ -25,6 +25,6 @@
 Details on the database design are included within the project documentation to support the backend structure of the webpage.
 
 ## Technologies Used
-- **Frontend:** HTML, CSS, JavaScript (Node.js), MySQL
-- **Backend:** [Specific backend technologies used]
-- **Database:** [Specific database used, e.g., MySQL, PostgreSQL]
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js
+- **Database:** MySQL
